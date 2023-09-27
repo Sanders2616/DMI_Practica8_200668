@@ -6,8 +6,8 @@
 UNIVERSIDAD TECNOLÓGICA DE XICOTEPEC DE JUÁREZ <br><br>
 Materia: Desarrollo Movil Integral <br>
 200668_Sandra Aguilar Santos<br>
-Practica 8:Contexto inicial de la aplicacion movieapp. <br>
-Descripción:Realizar la aplicación con contexto de peliculas, que incluya un Bottom Navigation Bar, Drawer. <br>
+Practica 8:Recuperaciond de los Poster de Peliculas de la aplicacion movieapp. <br>
+Descripción:La práctica en Flutter consiste en desarrollar una aplicación que se conecta a una API de películas utilizando una API key para obtener los pósteres de películas. Esta aplicación utiliza solicitudes HTTP para acceder a los datos, procesa las respuestas JSON y muestra los pósteres de las películas en una interfaz de usuario atractiva. Los usuarios pueden explorar una amplia variedad de películas y ver los pósteres junto con información adicional. Además, se pueden implementar características adicionales, como la búsqueda de películas o el filtrado por género. Esta práctica ayuda a los desarrolladores a comprender cómo interactuar con API externas y mostrar datos dinámicos en una aplicación Flutter. <br>
 Fecha entrega: 27 de septiembre del 2023 <br> <br>
 
 # Resultado de la Practica 8
