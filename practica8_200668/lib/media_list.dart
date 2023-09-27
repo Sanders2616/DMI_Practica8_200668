@@ -8,8 +8,30 @@ class MediaList extends StatefulWidget {
 }
 
 class _MediaListState extends State<MediaList> {
+  List<Media> _media = new List.empty();
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void loadMovies() async {
+    var movies = await HttpHandler().fetchMovies();
+    setState(() {
+      movies.addAll(movies);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new Container();
+    return new Container(
+      child: new ListView.builder(
+        itemCount: _media.length,
+        itemBuilder: (BuildContext context, init index) {
+          return new Column(
+            children: <Widget>[new Image.network(_media[index].getPosterUrl())],
+          );
+        },
+      ),
+    );
   }
 }
