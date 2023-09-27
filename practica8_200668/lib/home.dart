@@ -12,16 +12,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   //@override
   //void initState() {
-   // super.initState();
-    //_loadJson();
- // }
+  // super.initState();
+  //_loadJson();
+  // }
 
   //_loadJson() async {
-   // String data = await HttpHandler().fetchMovies();
-   // print(data);
-
-
-  }
+  // String data = await HttpHandler().fetchMovies();
+  // print(data);
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +63,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: new PageView(
-        children:<Widget>[
-          new MediaList()
-        ],
+        children: <Widget>[new MediaList()],
       ),
       bottomNavigationBar: new BottomNavigationBar(
         items: _obtenerIconos(),
@@ -83,7 +78,7 @@ class _HomeState extends State<Home> {
       new BottomNavigationBarItem(
           icon: new Icon(Icons.update_rounded), label: "Próximamente"),
       new BottomNavigationBarItem(
-          icon: new Icon(Icons.star_rounded), label: "Populares"),
+          icon: new Icon(Icons.star_rounded), label: "Mejor valorados"),
     ];
   }
 }

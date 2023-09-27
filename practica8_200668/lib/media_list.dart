@@ -4,20 +4,22 @@ import 'package:practica8_200668/model/Media.dart';
 
 class MediaList extends StatefulWidget {
   @override
-  _MediaListState createState() => new _MediaListState();
+  _MediaListState createState() => _MediaListState();
 }
 
 class _MediaListState extends State<MediaList> {
-  List<Media> _media = new List.empty();
+  List<Media> _media = [];
+  //List<Media> _media = new List.empty();
   @override
   void initState() {
     super.initState();
+    loadMovies();
   }
 
   void loadMovies() async {
     var movies = await HttpHandler().fetchMovies();
     setState(() {
-      movies.addAll(movies);
+      _media.addAll(movies);
     });
   }
 
@@ -26,7 +28,7 @@ class _MediaListState extends State<MediaList> {
     return new Container(
       child: new ListView.builder(
         itemCount: _media.length,
-        itemBuilder: (BuildContext context, init index) {
+        itemBuilder: (BuildContext context, int index) {
           return new Column(
             children: <Widget>[new Image.network(_media[index].getPosterUrl())],
           );

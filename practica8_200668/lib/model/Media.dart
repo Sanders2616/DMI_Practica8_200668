@@ -1,4 +1,4 @@
-import 'package:movie_app/common/Util.dart';
+import 'package:practica8_200668/common/Util.dart';
 
 class Media {
   int id;
@@ -11,6 +11,7 @@ class Media {
   List<dynamic> genreIds;
 
   String getPosterUrl() => getMediumPictureUrl(posterPath);
+
   factory Media(Map jsonMap) {
     try {
       return new Media.deserialize(jsonMap);
@@ -18,6 +19,7 @@ class Media {
       throw ex;
     }
   }
+
   Media.deserialize(Map json)
       : id = json["id"].toInt(),
         voteAverage = json["vote_average"].toDouble(),
@@ -25,6 +27,16 @@ class Media {
         posterPath = json["poster_path"] ?? "",
         backdropPath = json["backdrop_path"] ?? "",
         overview = json["overview"],
-        releaseDate = json["release"],
+        releaseDate = json["release_date"],
         genreIds = json["genre_ids"].toList();
+
+  // Media.deserialize(Map json)
+  //     : id = json["id"].toInt(),
+  //       voteAverage = json["vote_average"].toDouble(),
+  //       title = json["title"],
+  //       posterPath = json["poster_path"] ?? "",
+  //       backdropPath = json["backdrop_path"] ?? "",
+  //       overview = json["overview"],
+  //       releaseDate = json["release_date"], // Corrected field name
+  //       genreIds = List<int>.from(json["genre_ids"]);
 }

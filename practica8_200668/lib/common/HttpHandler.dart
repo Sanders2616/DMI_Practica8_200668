@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:practica8_200668/common/Constants.dart';
 import 'package:practica8_200668/model/Media.dart';
+import 'dart:async';
 
 class HttpHandler {
   final String _baseUrl = "api.themoviedb.org";
@@ -10,10 +11,10 @@ class HttpHandler {
 
   Future<dynamic> getJson(Uri uri) async {
     http.Response response = await http.get(uri);
-    return json.decode(response.body).toString();
+    return json.decode(response.body);
   }
 
-  Future<Media> fetchMovies() {
+  Future<List<Media>> fetchMovies() {
     var uri = new Uri.https(_baseUrl, "3/movie/popular",
         {'api_key': API_KEY, 'page': "1", 'language': _lenguaje});
 
