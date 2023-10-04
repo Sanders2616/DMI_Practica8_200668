@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practica8_200668/common/HttpHandler.dart';
 import 'package:practica8_200668/model/Media.dart';
+import 'package:practica8_200668/media_list_item.dart';
 
 class MediaList extends StatefulWidget {
   @override
@@ -25,13 +26,11 @@ class _MediaListState extends State<MediaList> {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      child: new ListView.builder(
+    return Container(
+      child: ListView.builder(
         itemCount: _media.length,
         itemBuilder: (BuildContext context, int index) {
-          return new Column(
-            children: <Widget>[new Image.network(_media[index].getPosterUrl())],
-          );
+          return MediaListItem(_media[index]);
         },
       ),
     );
