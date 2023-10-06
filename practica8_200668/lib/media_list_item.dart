@@ -32,27 +32,41 @@ class MediaListItem extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  left: 10.0,
-                  bottom: 10.0,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        child: Text(
-                          media.title,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
-                        ),
+                left: 10.0,
+                bottom: 10.0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      child: Text(
+                        media.title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
                       ),
-                      new Container(
-                        padding: const EdgeInsets.only(top: 4.0),
-                        child: new Text(
-                          media.getGenres(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                    ),
+                    new Container(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: new Text(
+                        media.getGenres(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              new Positioned(
+                  right: 5.0,
+                  bottom: 10.0,
+                  child: new Column(
+                    children: <Widget>[
+                      new Row(
+                        children: <Widget>[
+                          new Text(media.voteAverage.toString()),
+                          new Icon(Icons.star, color: Colors.white, size: 16.0)
+                        ],
                       )
                     ],
                   ))
