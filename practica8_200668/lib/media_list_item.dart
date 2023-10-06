@@ -38,15 +38,18 @@ class MediaListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
+                      width: 300.0,
                       child: Text(
                         media.title,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    new Container(
+                    Container(
                       padding: const EdgeInsets.only(top: 4.0),
-                      child: new Text(
+                      child: Text(
                         media.getGenres(),
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
@@ -57,15 +60,29 @@ class MediaListItem extends StatelessWidget {
                   ],
                 ),
               ),
-              new Positioned(
-                  right: 5.0,
+              Positioned(
+                  right: 7.5,
                   bottom: 10.0,
-                  child: new Column(
+                  child: Column(
                     children: <Widget>[
-                      new Row(
+                      Row(
                         children: <Widget>[
-                          new Text(media.voteAverage.toString()),
-                          new Icon(Icons.star, color: Colors.white, size: 16.0)
+                          Text(media.voteAverage.toString()),
+                          Container(width: 4.0),
+                          Icon(Icons.star, color: Colors.white, size: 16.0)
+                        ],
+                      ),
+                      Container(
+                        height: 4.0,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Text("2018"),
+                          Container(
+                            width: 4.0,
+                          ),
+                          Icon(Icons.date_range,
+                              color: Colors.white, size: 16.0)
                         ],
                       )
                     ],
